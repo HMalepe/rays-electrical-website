@@ -1,0 +1,5 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ContactBand } from '@/components/site/SiteShell';
+import { pageHead, steps } from '@/data/site';
+export const Route = createFileRoute('/process')({ head: () => pageHead('The process', 'From a quick conversation and free initial estimate to an agreed plan and careful electrical work. Here is how working with Ray works.'), component: ProcessPage });
+function ProcessPage() { return <main><section className="page-intro"><span className="eyebrow">HOW WE GET IT DONE</span><h1>No guesswork.<br /><em>Just good work.</em></h1><p>A clear plan. An honest conversation. A simpler way to get your electrical work sorted.</p></section><section className="light-section"><div className="process-list">{steps.map((step, i) => <article key={step.title}><span className="process-number">0{i + 1}</span><h2>{step.title}</h2><p>{step.text}</p></article>)}</div></section><ContactBand /></main>; }

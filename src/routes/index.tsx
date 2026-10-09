@@ -1,24 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight, ArrowDown, Check, Zap, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ContactBand } from '@/components/site/SiteShell';
+import { ServiceGrid } from '@/components/site/ServiceGrid';
+import { pageHead, site } from '@/data/site';
+import hero from '@/assets/ray-home.jpg';
 export const Route = createFileRoute("/")({
+  head: () => pageHead('Electrician in Fourways & Sandton', 'Ray Electrical: DB board wiring, breaker repairs, lighting and socket installations for homes and businesses in Fourways and Sandton.'),
   component: Index,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <main><section className="home-hero"><img className="hero-photo" src={hero} alt="Modern home with carefully designed interior and outdoor lighting" width={1920} height={1088} /><div className="hero-shade" /><div className="hero-content"><div className="hero-eyebrow"><span className="status-dot" /> YOUR LOCAL ELECTRICAL SPECIALIST</div><h1>RAY<br />ELECTRICAL<span className="heading-dot">.</span></h1><p className="hero-tagline">Power. Done right.</p><p className="hero-description">Expert electrical work. Honest service.<br />For the spaces you live and work in.</p><div className="hero-actions"><Button asChild variant="ray" size="lg"><Link to="/contact">Get a free estimate <ArrowUpRight /></Link></Button><Button asChild variant="heroOutline" size="lg"><a href={`tel:${site.tel}`}><Phone /> Call Ray</a></Button></div></div><div className="hero-bottom"><span><Zap size={14} /> SMALL REPAIRS. BIG DIFFERENCE.</span><a href="#expertise" aria-label="Explore our expertise">EXPLORE <ArrowDown size={16} /></a><span className="hero-location">26°01′ S &nbsp; 28°00′ E</span></div></section><div className="trust-strip"><span><Check /> Residential & commercial</span><span><Check /> Free initial estimates</span><span><Check /> Materials & labour supplied</span><span><Check /> No job too small</span></div><section className="light-section" id="expertise"><div className="section-heading"><div><span className="eyebrow">01 / OUR EXPERTISE</span><h2>Every connection.<br />Considered.</h2></div><div className="section-intro"><p>From the board to the last light bulb. Practical electrical solutions, delivered with attention to every detail.</p><Link to="/services" className="text-link">Explore our services <ArrowUpRight size={18} /></Link></div></div><ServiceGrid /></section><section className="about-preview"><span className="eyebrow">02 / THE PERSON BEHIND THE POWER</span><div className="about-preview-grid"><h2>Not just an electrician.<br />Your go-to guy.</h2><div><p>A home isn’t just wires and walls. It’s where life happens. Ray brings a personal approach to electrical work, keeping things clear, practical and straightforward.</p><Link to="/about" className="text-link">Meet Ray <ArrowUpRight size={18} /></Link></div></div><div className="principles"><span><span>01</span> Clear communication.</span><span><span>02</span> Careful workmanship.</span><span><span>03</span> Respect for your space.</span></div></section><ContactBand /></main>;
 }
