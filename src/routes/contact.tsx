@@ -3,7 +3,7 @@ import { useState, type FormEvent } from 'react';
 import { ArrowUpRight, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { pageHead, site, services } from '@/data/site';
-export const Route = createFileRoute('/contact')({ validateSearch: (search: Record<string, unknown>) => ({ service: typeof search.service === 'string' ? search.service : undefined }), head: () => pageHead('Contact Ray', 'Request a free electrical estimate from Ray. Call 067 686 7657 or send your project details on WhatsApp. Serving Fourways and Sandton.'), component: ContactPage });
+export const Route = createFileRoute('/contact')({ validateSearch: (search: Record<string, unknown>): { service?: string } => ({ service: typeof search['service'] === 'string' ? search['service'] : undefined }), head: () => pageHead('Contact Ray', 'Request a free electrical estimate from Ray. Call 067 686 7657 or send your project details on WhatsApp. Serving Fourways and Sandton.'), component: ContactPage });
 function ContactPage() {
  const search = Route.useSearch();
  const [sent, setSent] = useState(false);
