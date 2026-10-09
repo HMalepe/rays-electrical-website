@@ -1,0 +1,13 @@
+import { Link } from '@tanstack/react-router';
+import { useState } from 'react';
+import { ArrowUpRight, Menu, X, Zap, Phone, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { site } from '@/data/site';
+
+const links = [{ to: '/' as const, label: 'Home' }, { to: '/services' as const, label: 'Services' }, { to: '/about' as const, label: 'About Ray' }, { to: '/process' as const, label: 'The process' }, { to: '/contact' as const, label: 'Contact' }];
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  return <header className="site-header"><div className="utility-bar"><span><MapPin size={12} /> FOURWAYS & SANDTON</span><a href={`tel:${site.tel}`}><Phone size={12} /> {site.phone}</a></div><div className="nav-wrap"><Link to="/" className="brand" aria-label="Ray Electrical home" onClick={() => setOpen(false)}><Zap className="brand-bolt" fill="currentColor" /><span>RAY<span className="brand-sub">ELECTRICAL</span></span></Link><nav className="desktop-nav" aria-label="Main navigation">{links.map(link => <Link key={link.to} to={link.to} activeProps={{ className: 'nav-active' }} activeOptions={{ exact: true }}>{link.label}</Link>)}</nav><Button asChild variant="ray" className="nav-quote"><Link to="/contact">Get a free estimate <ArrowUpRight /></Link></Button><Button variant="ghost" size="icon" className="mobile-menu-button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button></div>{open && <nav className="mobile-nav" aria-label="Mobile navigation">{links.map(link => <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}<ArrowUpRight size={20} /></Link>)}</nav>}</header>;
+}
+export function SiteFooter() { return <footer className="site-footer"><div className="footer-main"><Link to="/" className="brand"><Zap className="brand-bolt" fill="currentColor" /><span>RAY<span className="brand-sub">ELECTRICAL</span></span></Link><p>The handyman you can count on.</p><a href={`tel:${site.tel}`}>{site.phone} <ArrowUpRight size={16} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Ray Electrical</span><span>Fourways · Sandton · South Africa</span><Link to="/contact">Let’s get to work <ArrowUpRight size={14} /></Link></div></footer>; }
+export function ContactBand() { return <section className="contact-band"><div><span className="eyebrow">GOOD WORK STARTS WITH A CONVERSATION</span><h2>Let’s get your power<br />done right.</h2></div><Button asChild variant="ink" size="lg"><Link to="/contact">Talk to Ray <ArrowUpRight /></Link></Button></section>; }
