@@ -1,4 +1,0 @@
-import { Link } from '@tanstack/react-router';
-import { ArrowUpRight } from 'lucide-react';
-import { services } from '@/data/site';
-export function ServiceGrid() { return <div className="service-grid">{services.map(service => <Link to="/contact" search={{ service: service.title }} className="service-card" key={service.number}><div className="service-image"><span className="service-number">{service.number}</span><img src={service.image} alt={service.title + ' illustration'} width={600} height={400} loading="lazy" /><span className="service-arrow"><ArrowUpRight size={22} /></span></div><div className="service-copy"><span className="eyebrow">{service.category}</span><h3>{service.title}</h3><p>{service.description}</p></div></Link>)}</div>; }
