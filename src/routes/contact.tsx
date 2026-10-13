@@ -258,7 +258,7 @@ function Enquiry({ preset }: { preset: string }) {
           <Reveal as="h2">
             Describe
             <br />
-            <em>the job.</em>
+            <em>the work.</em>
           </Reveal>
           <p>
             Fill this in and it opens as a ready-to-send WhatsApp message to Ray. Nothing is stored
@@ -343,7 +343,12 @@ function Enquiry({ preset }: { preset: string }) {
               <span>A little about the job</span>
               <span aria-hidden="true">05</span>
             </span>
-            <textarea name="message" rows={4} placeholder="Tell Ray what needs attention…" required />
+            <textarea
+              name="message"
+              rows={4}
+              placeholder="Tell Ray what needs attention…"
+              required
+            />
           </label>
 
           <div className="ct-submit">
@@ -358,7 +363,12 @@ function Enquiry({ preset }: { preset: string }) {
             </p>
           </div>
 
-          <div className="ct-status" role="status" aria-live="polite" data-state={ready ? "ready" : "idle"}>
+          <div
+            className="ct-status"
+            role="status"
+            aria-live="polite"
+            data-state={ready ? "ready" : "idle"}
+          >
             {ready ? (
               <>
                 <i className="ct-status-line" aria-hidden="true" />
@@ -372,7 +382,12 @@ function Enquiry({ preset }: { preset: string }) {
                     below, or call instead.
                   </p>
                   <div className="ct-status-links">
-                    <a href={ready} target="_blank" rel="noopener noreferrer" className="arrow-link">
+                    <a
+                      href={ready}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="arrow-link"
+                    >
                       Open WhatsApp again
                       <span className="arrow-circle">
                         <ArrowUpRight />

@@ -196,8 +196,8 @@ function Story() {
         <div className="about-story-copy">
           <ScrubText className="about-scrub" start="top 85%" end="bottom 60%">
             When you invite someone into your home or business, <em>trust matters.</em> Ray takes
-            the time to understand what you need, explain the work and agree the plan before
-            getting started.
+            the time to understand what you need, explain the work and agree the plan before getting
+            started.
           </ScrubText>
           <div className="about-story-foot">
             <p>
@@ -310,23 +310,45 @@ function Area() {
       <div className="wrap about-area-head">
         <span className="label">Where Ray works</span>
         <Reveal as="h2">
-          Fourways <span className="about-area-dot" aria-hidden="true" />{" "}
-          <em>Sandton</em>
+          Fourways <span className="about-area-dot" aria-hidden="true" /> <em>Sandton</em>
         </Reveal>
         <p>Homes and businesses across Fourways and Sandton. Residential and commercial.</p>
       </div>
 
       <div className="wrap">
         <div className="about-map">
-          <svg className="about-map-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path className="about-route-d" vectorEffect="non-scaling-stroke" d="M37.5 42.86 L68.75 71.43" />
+          <svg
+            className="about-map-route"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              className="about-route-d"
+              vectorEffect="non-scaling-stroke"
+              d="M37.5 42.86 L68.75 71.43"
+            />
             <path className="about-route-m" vectorEffect="non-scaling-stroke" d="M37.5 40 L75 70" />
           </svg>
 
           <Draw className="about-fix" start="top 75%" duration={2.8}>
             <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true">
-              <circle className="schem-draw" pathLength={1} vectorEffect="non-scaling-stroke" cx="100" cy="100" r="96" />
-              <circle className="schem-draw" pathLength={1} vectorEffect="non-scaling-stroke" cx="100" cy="100" r="62" />
+              <circle
+                className="schem-draw"
+                pathLength={1}
+                vectorEffect="non-scaling-stroke"
+                cx="100"
+                cy="100"
+                r="96"
+              />
+              <circle
+                className="schem-draw"
+                pathLength={1}
+                vectorEffect="non-scaling-stroke"
+                cx="100"
+                cy="100"
+                r="62"
+              />
               <circle
                 className="schem-dim"
                 vectorEffect="non-scaling-stroke"
@@ -335,8 +357,18 @@ function Area() {
                 cy="100"
                 r="30"
               />
-              <path className="schem-draw" pathLength={1} vectorEffect="non-scaling-stroke" d="M100 0 V84 M100 116 V200" />
-              <path className="schem-draw" pathLength={1} vectorEffect="non-scaling-stroke" d="M0 100 H84 M116 100 H200" />
+              <path
+                className="schem-draw"
+                pathLength={1}
+                vectorEffect="non-scaling-stroke"
+                d="M100 0 V84 M100 116 V200"
+              />
+              <path
+                className="schem-draw"
+                pathLength={1}
+                vectorEffect="non-scaling-stroke"
+                d="M0 100 H84 M116 100 H200"
+              />
             </svg>
             <span className="about-fix-dot" />
           </Draw>

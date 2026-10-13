@@ -175,6 +175,9 @@ export function Reveal({
           })
         : undefined;
 
+      // innerText keeps the space that a <br /> implies, unlike SplitText's own label.
+      let done = false;
+      const label = el.innerText.replace(/\s+/g, " ").trim();
       SplitText.create(el, {
         type: type === "chars" ? "chars,words,lines" : type === "words" ? "words,lines" : "lines",
         mask: type,
@@ -185,7 +188,14 @@ export function Reveal({
         onSplit(self) {
           const targets =
             type === "chars" ? self.chars : type === "words" ? self.words : self.lines;
+          el.setAttribute("aria-label", label);
+          // Masks clip only while text is moving; afterwards glows and descenders breathe.
+          gsap.set(self.masks, { overflow: done ? "visible" : "clip" });
           current = gsap.from(targets, {
+            onComplete: () => {
+              done = true;
+              gsap.set(self.masks, { overflow: "visible" });
+            },
             yPercent: type === "chars" ? 100 : 118,
             rotate: type === "lines" ? 2.5 : 0,
             transformOrigin: "0% 0%",

@@ -5,14 +5,16 @@
 /* ---------- Hero ---------- */
 .proc-hero { isolation: isolate; }
 .proc-hero > .wrap { position: relative; z-index: 1; }
-.proc-wave { position: absolute; z-index: 0; left: 0; right: 0; top: 30%; height: clamp(150px, 28vh, 290px); pointer-events: none; }
+/* Let the title's glow paint past the line masks instead of ending in a hard edge. */
+.proc-hero h1 > div { overflow-clip-margin: 0.4em; }
+.proc-wave { position: absolute; z-index: 0; left: 0; right: 0; top: 30%; height: clamp(150px, 28vh, 290px); pointer-events: none; -webkit-mask-image: linear-gradient(90deg, var(--clear) 4%, var(--ink) 52%); mask-image: linear-gradient(90deg, var(--clear) 4%, var(--ink) 52%); }
 .proc-wave svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .proc-wave-axis { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 2 6; }
 .proc-wave-line { fill: none; stroke: var(--hairline-strong); stroke-width: 1; }
-.proc-wave-pulse { fill: none; stroke: var(--filament); stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: 0.07 0.93; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px var(--filament-glow)); display: none; }
+.proc-wave-pulse { fill: none; stroke: var(--filament); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 0.07 0.93; stroke-dashoffset: 0; filter: drop-shadow(0 0 6px var(--filament-glow)); display: none; }
 .motion .proc-wave-pulse { display: block; animation: proc-pulse 7s linear infinite; }
 @keyframes proc-pulse { to { stroke-dashoffset: -1; } }
-.proc-wave-tag { position: absolute; left: var(--gutter); top: -1.75rem; }
+.proc-wave-tag { position: absolute; right: var(--gutter); bottom: 0; }
 .proc-hero-note { grid-column: 1 / span 4; color: var(--text); }
 
 /* ---------- Run: pinned circuit (desktop) ---------- */
@@ -27,11 +29,11 @@
 .proc-count { color: var(--filament); }
 
 .proc-main { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; }
-.proc-big { grid-column: 1 / span 6; display: flex; font-family: var(--font-display); font-size: min(27vw, 42vh); line-height: 1; letter-spacing: -0.06em; margin-left: -0.04em; }
-.proc-zero { color: transparent; -webkit-text-stroke: 1px var(--hairline-strong); }
-.proc-roll { display: inline-block; height: 1em; overflow: hidden; clip-path: inset(0 -40% 0 -40%); }
-.proc-digits { display: block; transform: translateY(calc(var(--step, 0) * -1em)); transition: transform 1.3s var(--ease-out-expo); }
-.proc-digits > span { display: block; height: 1em; color: var(--filament); text-shadow: 0 0 46px var(--filament-glow); }
+.proc-big { grid-column: 1 / span 6; display: flex; font-family: var(--font-display); font-size: min(34vw, 50vh); line-height: 1.2; letter-spacing: -0.02em; margin-left: -0.05em; margin-block: -0.12em; }
+.proc-zero { display: block; height: 1.2em; color: transparent; -webkit-text-stroke: 1px var(--hairline-strong); }
+.proc-roll { display: block; height: 1.2em; clip-path: inset(0 -50% 0 -50%); }
+.proc-digits { display: block; transform: translateY(calc(var(--step, 0) * -1.2em)); transition: transform 1.3s var(--ease-out-expo); }
+.proc-digits > span { display: block; height: 1.2em; color: var(--filament); text-shadow: 0 0 36px var(--filament-glow); }
 
 .proc-copies { grid-column: 7 / span 5; display: grid; }
 .proc-copy { grid-area: 1 / 1; align-self: center; }
@@ -46,7 +48,7 @@
 .proc-copy p { margin-top: 1.75rem; max-width: 28rem; font-size: var(--fs-lead); line-height: 1.35; letter-spacing: -0.012em; color: var(--muted); }
 
 .proc-track { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); padding-top: 2rem; }
-.proc-wire { position: absolute; left: 0; right: 2.75rem; top: 0; height: 1px; background: var(--rule-strong); }
+.proc-wire { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--rule-strong); }
 .proc-current { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: var(--filament); box-shadow: 0 0 12px 1px var(--filament-glow); }
 .proc-current::after { content: ""; position: absolute; right: -4px; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--bone); box-shadow: 0 0 0 3px var(--filament-glow), 0 0 26px 7px var(--filament-glow); }
 .proc-node { grid-column: span 3; position: relative; display: flex; flex-direction: column; gap: 0.6rem; padding-right: 1.5rem; }
@@ -56,9 +58,10 @@
 .proc-node .label { transition: color 0.6s; }
 .proc-node.is-live .proc-node-title { color: var(--text); }
 .proc-node.is-live .label { color: var(--filament); }
-.proc-lamp { position: absolute; right: 0; top: 0; width: 2.75rem; height: 2.5rem; transform: translateY(-50%); display: grid; place-items: center; color: var(--smoke); }
-.proc-lamp svg { width: 2.5rem; height: 2.75rem; transform: rotate(90deg); opacity: 0.4; transition: opacity 0.8s, filter 1s var(--ease-out-quint), color 0.8s; }
-.proc-lamp::before { content: ""; position: absolute; left: 60%; top: 50%; width: 8rem; height: 8rem; margin: -4rem 0 0 -4rem; border-radius: 50%; background: radial-gradient(closest-side, var(--filament-glow), var(--clear)); opacity: 0; transition: opacity 1s var(--ease-out-quint); }
+/* The wire ends in a lamp hanging from its last terminal. */
+.proc-lamp { position: absolute; right: 0; top: 0; width: 3.75rem; transform: translateX(50%); color: var(--smoke); }
+.proc-lamp svg { display: block; width: 100%; height: auto; transform: rotate(180deg); opacity: 0.45; transition: opacity 0.8s, filter 1s var(--ease-out-quint), color 0.8s; }
+.proc-lamp::before { content: ""; position: absolute; left: 50%; top: 62%; width: 12rem; height: 12rem; margin: -6rem 0 0 -6rem; border-radius: 50%; background: radial-gradient(closest-side, var(--filament-glow), var(--clear)); opacity: 0; transition: opacity 1.2s var(--ease-out-quint); }
 .proc-stage.is-on .proc-lamp { color: var(--bone); }
 .proc-stage.is-on .proc-lamp svg { opacity: 1; filter: drop-shadow(0 0 10px var(--filament-glow)); }
 .proc-stage.is-on .proc-lamp::before { opacity: 1; }

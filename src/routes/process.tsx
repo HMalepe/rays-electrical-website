@@ -110,15 +110,10 @@ function Hero() {
   return (
     <section ref={ref} className="page-hero proc-hero s-ink">
       <div className="proc-wave" aria-hidden="true">
-        <svg viewBox="0 0 1600 300" preserveAspectRatio="none">
+        <svg viewBox="0 0 1600 300" preserveAspectRatio="xMidYMid slice">
           <path d="M0 150 H1600" className="proc-wave-axis" vectorEffect="non-scaling-stroke" />
           <path d={WAVE} className="proc-wave-line" vectorEffect="non-scaling-stroke" />
-          <path
-            d={WAVE}
-            className="proc-wave-pulse"
-            pathLength={1}
-            vectorEffect="non-scaling-stroke"
-          />
+          <path d={WAVE} className="proc-wave-pulse" pathLength={1} />
         </svg>
         <span className="label proc-wave-tag">Supply · 230 V ~ 50 Hz</span>
       </div>

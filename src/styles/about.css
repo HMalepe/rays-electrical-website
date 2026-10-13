@@ -11,7 +11,6 @@
 .about-mark-guides { stroke: var(--hairline); stroke-width: 1; }
 .about-mark-guides * { vector-effect: non-scaling-stroke; stroke-dasharray: 2 7; }
 /* The shared glow gets cut into a band by the line masks of the reveal; keep the hero type clean. */
-.page-hero.about-hero h1 em { text-shadow: none; }
 .about-hero .page-hero-foot { align-items: end; }
 .about-hero .page-hero-foot .lead { grid-column: 1 / span 5; }
 .about-hero-coords { grid-column: 10 / -1; justify-self: end; color: var(--text); }
