@@ -43,7 +43,12 @@ function Hero() {
           { opacity: 1, y: 0, duration: 1.4, stagger: 0.07, ease: ease.out },
           0.35,
         );
-      intro.fromTo(".svc-hero-glow", { opacity: 0 }, { opacity: 1, duration: 3, ease: "power2.inOut" }, 2.4);
+      intro.fromTo(
+        ".svc-hero-glow",
+        { opacity: 0 },
+        { opacity: 1, duration: 3, ease: "power2.inOut" },
+        2.4,
+      );
       const off = onIntro(() => intro.play());
       gsap.to(".svc-hero-art", {
         yPercent: 14,
@@ -239,7 +244,7 @@ function Chapters() {
                       <span>Fig. {service.number}</span>
                       <span>{service.short}</span>
                     </div>
-                    <Draw className="svc-ch-art" start="top 72%" duration={3.2}>
+                    <Draw className="svc-ch-art" start="top 95%" duration={2.6}>
                       <ServiceArt
                         kind={service.key}
                         title={`Technical drawing: ${service.title}`}
