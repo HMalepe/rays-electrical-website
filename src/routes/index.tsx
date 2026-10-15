@@ -15,9 +15,9 @@ import {
 } from "@/components/motion/Motion";
 import { ClosingCta } from "@/components/site/SiteShell";
 import { ServiceArt } from "@/components/site/ServiceArt";
+import { HeroVideo } from "@/components/site/HeroVideo";
 import { pageHead, principles, services, site, steps } from "@/data/site";
 import hero from "@/assets/ray-home.jpg";
-import tree from "@/assets/detail-tree.jpg";
 import path from "@/assets/detail-path.jpg";
 import living from "@/assets/detail-living.jpg";
 import pool from "@/assets/detail-pool.jpg";
@@ -71,6 +71,12 @@ function Hero() {
           0,
         )
         .fromTo(
+          ".hero-video",
+          { opacity: 0, scale: 1.08 },
+          { opacity: 1, scale: 1, duration: 2.6, ease: ease.out },
+          0,
+        )
+        .fromTo(
           ".hero [data-fade]",
           { opacity: 0, y: 24 },
           { opacity: 1, y: 0, duration: 1.4, stagger: 0.07, ease: ease.out },
@@ -80,7 +86,7 @@ function Hero() {
 
       const out = { trigger: ref.current, start: "top top", end: "bottom top", scrub: true };
       gsap.to(".hero-title", { yPercent: -22, ease: "none", scrollTrigger: out });
-      gsap.to(".hero-frame", { yPercent: -45, ease: "none", scrollTrigger: out });
+      gsap.to(".hero-video", { yPercent: 10, ease: "none", scrollTrigger: out });
       gsap.to(".hero-inner", { opacity: 0.15, ease: "power1.in", scrollTrigger: out });
       return off;
     },
@@ -89,6 +95,7 @@ function Hero() {
 
   return (
     <section ref={ref} className="hero s-ink">
+      <HeroVideo sectionRef={ref} />
       <div className="wrap hero-inner">
         <div className="hero-meta label">
           <span className="label-dot" data-fade="">
@@ -101,22 +108,6 @@ function Hero() {
           </span>
         </div>
         <div className="hero-rule" />
-
-        <div className="hero-frame">
-          <RevealImage
-            src={tree}
-            alt="An olive tree uplit against a dark wall at dusk"
-            width={390}
-            height={620}
-            load
-            delay={0.35}
-            parallax={9}
-            priority
-          />
-          <span className="label" data-fade="">
-            Uplight — garden
-          </span>
-        </div>
 
         <h1 className="hero-title" aria-label="Power, done right.">
           <Reveal as="span" className="hero-line" load>

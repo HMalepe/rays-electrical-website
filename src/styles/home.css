@@ -38,20 +38,74 @@
   height: 1px;
   background: var(--rule);
 }
-.hero-frame {
+/* Looping footage behind the hero. Oversized vertically so the scroll parallax never exposes an edge. */
+.hero-video {
   position: absolute;
-  top: calc(var(--header-h) + 4.5rem);
-  right: var(--gutter);
-  width: clamp(190px, 21vw, 380px);
-  z-index: 0;
+  inset: -6% 0;
+  z-index: -3;
+  background: var(--ink-deep);
+  will-change: transform;
 }
-.hero-frame {
-  display: flex;
-  flex-direction: column-reverse;
-}
-.hero-frame .label {
+.hero-video video {
   display: block;
-  margin-bottom: 0.75rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 55%;
+}
+.motion .hero-video {
+  opacity: 0;
+}
+.motion-failsafe .hero-video {
+  opacity: 1;
+}
+.hero-video-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--scrim) 0%, var(--scrim-soft) 48%, var(--clear) 85%),
+    linear-gradient(0deg, var(--scrim) 0%, var(--clear) 38%),
+    linear-gradient(180deg, var(--scrim-soft) 0%, var(--clear) 22%);
+}
+.hero-video-toggle {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--header-h) + 4.4rem);
+  right: var(--gutter);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  height: 2.25rem;
+  padding: 0 0.9rem 0 0.75rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  background: var(--glass);
+  color: var(--bone);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background-color 0.4s var(--ease-out-quint),
+    color 0.4s var(--ease-out-quint);
+}
+.motion .hero-video-toggle {
+  animation: toggle-in 1s var(--ease-out-quint) 2.4s both;
+}
+@keyframes toggle-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+.hero-video-toggle svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.hero-video-toggle:hover {
+  background: var(--bone);
+  color: var(--ink);
 }
 .hero-title {
   position: relative;
@@ -689,9 +743,16 @@
   .hero-coords {
     display: none;
   }
-  .hero-frame {
-    top: calc(var(--header-h) + 3.75rem);
-    width: 40vw;
+  .hero-video video {
+    object-position: 64% 50%;
+  }
+  .hero-video-shade {
+    background:
+      linear-gradient(90deg, var(--scrim) 0%, var(--scrim-soft) 70%, var(--scrim-soft) 100%),
+      linear-gradient(0deg, var(--scrim) 0%, var(--clear) 45%);
+  }
+  .hero-video-toggle {
+    top: calc(var(--header-h) + 3.7rem);
   }
   .hero-title {
     font-size: clamp(4.25rem, 21vw, 9rem);
