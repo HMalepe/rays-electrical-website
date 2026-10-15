@@ -73,7 +73,6 @@ export function HeroVideo({ sectionRef }: { sectionRef: React.RefObject<HTMLElem
           loop
           playsInline
           preload="none"
-          poster="/videos/hero-poster.jpg"
           tabIndex={-1}
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}

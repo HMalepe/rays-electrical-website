@@ -43,7 +43,8 @@
   position: absolute;
   inset: -6% 0;
   z-index: -3;
-  background: var(--ink-deep);
+  /* The still lives here, not in the video's poster attribute: Safari can draw a poster smaller than the frame. */
+  background: var(--ink-deep) url("/videos/hero-poster.jpg") 62% 55% / cover no-repeat;
   will-change: transform;
 }
 .hero-video video {
@@ -742,6 +743,9 @@
   .hero-meta > :nth-child(3),
   .hero-coords {
     display: none;
+  }
+  .hero-video {
+    background-position: 64% 50%;
   }
   .hero-video video {
     object-position: 64% 50%;
