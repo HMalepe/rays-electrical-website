@@ -463,7 +463,7 @@ function Send() {
                 href={whatsappLink(draftMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-filament"
+                className="btn btn-spark"
               >
                 <RollText>Start this message</RollText>
                 <ArrowUpRight />

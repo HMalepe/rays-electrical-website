@@ -37,7 +37,7 @@ function NotFoundComponent() {
           <p className="lead">The page you’re looking for doesn’t exist or has been moved.</p>
         </div>
         <div style={{ marginTop: "2.5rem" }}>
-          <Link to="/" className="btn btn-filament">
+          <Link to="/" className="btn btn-spark">
             Back to the start
           </Link>
         </div>
@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#151311" },
+      { name: "theme-color", content: "#070e1b" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

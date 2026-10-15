@@ -135,7 +135,7 @@ function Hero() {
           </p>
           <div className="hero-actions" data-fade="">
             <Magnetic>
-              <Link to="/contact" className="btn btn-filament">
+              <Link to="/contact" className="btn btn-spark">
                 <RollText>Get a free estimate</RollText>
                 <ArrowUpRight />
               </Link>

@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
  * site can animate stroke-dashoffset 1 -> 0 and have the drawing draw itself.
  * Elements are authored in drawing order: outline, structure, detail, accent.
  *   schem-draw    line work that draws on
- *   schem-accent  tungsten accent (stroke: var(--filament))
+ *   schem-accent  tungsten accent (stroke: var(--spark))
  *   schem-dim     dashed construction / hidden lines that fade in instead
  *   schem-dot     tiny solid terminals and rivets
  */
@@ -23,7 +23,7 @@ const accent = {
   className: "schem-draw schem-accent",
   pathLength: 1,
   vectorEffect: NS,
-  stroke: "var(--filament)",
+  stroke: "var(--spark)",
 } as const;
 /** Dashed construction / hidden lines (fade, never draw). */
 const dim = {

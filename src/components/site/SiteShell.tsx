@@ -20,7 +20,7 @@ export function BrandMark({ className }: { className?: string }) {
       <path d="M16 43V21M24 43V21" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
       <path
         d="M16 21c0-3.5 2-3.5 2 0s2 3.5 2 0 2-3.5 2 0 2 3.5 2 0"
-        stroke="var(--filament)"
+        stroke="var(--spark)"
         strokeWidth="1.25"
         strokeLinecap="round"
         className="schem-accent"
@@ -73,7 +73,7 @@ export function SiteHeader() {
           <a href={`tel:${site.tel}`} className="hdr-phone">
             {site.phone}
           </a>
-          <Link to="/contact" className="btn btn-filament btn-sm">
+          <Link to="/contact" className="btn btn-spark btn-sm">
             <RollText>Free estimate</RollText>
           </Link>
           <button
@@ -232,7 +232,7 @@ export function ClosingCta({ title, lede }: { title?: ReactNode; lede?: string }
               href={whatsappLink("Hi Ray, I’d like a free estimate.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-filament btn-lg"
+              className="btn btn-spark btn-lg"
             >
               <RollText>WhatsApp Ray</RollText>
               <ArrowUpRight />

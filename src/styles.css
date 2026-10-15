@@ -17,8 +17,9 @@
 /*
  * Design system.
  *
- * Concept: an architectural lighting studio. Warm black ("ink"), warm paper
- * ("bone") and exactly one accent: a 2700K tungsten filament. Everything else
+ * Concept: an architectural lighting studio at blue hour. Deep night navy
+ * ("ink"), cool paper ("bone") and exactly one accent: electric arc blue
+ * ("spark"), which the warm light in the photography plays against. Everything else
  * is typography, hairlines and motion.
  *
  * Sections opt into a surface with .s-ink or .s-bone, which set the local
@@ -32,7 +33,7 @@
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
   --color-ink: var(--ink);
   --color-bone: var(--bone);
-  --color-filament: var(--filament);
+  --color-spark: var(--spark);
   --color-hero-foreground: var(--bone);
   --color-hero-border: var(--hairline);
   --radius-sm: calc(var(--radius) - 4px);
@@ -79,25 +80,25 @@
 
 :root {
   /* Palette */
-  --ink: oklch(0.155 0.006 65);
-  --ink-raised: oklch(0.195 0.007 65);
-  --ink-deep: oklch(0.115 0.005 65);
-  --bone: oklch(0.948 0.012 85);
-  --bone-deep: oklch(0.905 0.016 82);
-  --smoke: oklch(0.69 0.012 75);
-  --stone: oklch(0.47 0.012 70);
-  --filament: oklch(0.8 0.142 68);
-  --filament-deep: oklch(0.66 0.15 55);
-  --filament-glow: oklch(0.8 0.142 68 / 0.38);
-  --filament-haze: oklch(0.8 0.142 68 / 0.1);
-  --hairline: oklch(0.948 0.012 85 / 0.14);
-  --hairline-strong: oklch(0.948 0.012 85 / 0.3);
-  --hairline-ink: oklch(0.155 0.006 65 / 0.15);
-  --hairline-ink-strong: oklch(0.155 0.006 65 / 0.35);
-  --glass: oklch(0.155 0.006 65 / 0.62);
-  --scrim: oklch(0.115 0.005 65 / 0.72);
-  --scrim-soft: oklch(0.115 0.005 65 / 0.35);
-  --clear: oklch(0.155 0.006 65 / 0);
+  --ink: oklch(0.165 0.03 262);
+  --ink-raised: oklch(0.205 0.032 262);
+  --ink-deep: oklch(0.125 0.026 262);
+  --bone: oklch(0.968 0.006 250);
+  --bone-deep: oklch(0.928 0.011 250);
+  --smoke: oklch(0.73 0.022 255);
+  --stone: oklch(0.47 0.03 258);
+  --spark: oklch(0.79 0.14 238);
+  --spark-deep: oklch(0.5 0.2 262);
+  --spark-glow: oklch(0.79 0.14 238 / 0.4);
+  --spark-haze: oklch(0.79 0.14 238 / 0.11);
+  --hairline: oklch(0.968 0.006 250 / 0.14);
+  --hairline-strong: oklch(0.968 0.006 250 / 0.3);
+  --hairline-ink: oklch(0.165 0.03 262 / 0.15);
+  --hairline-ink-strong: oklch(0.165 0.03 262 / 0.35);
+  --glass: oklch(0.165 0.03 262 / 0.62);
+  --scrim: oklch(0.125 0.026 262 / 0.72);
+  --scrim-soft: oklch(0.125 0.026 262 / 0.35);
+  --clear: oklch(0.165 0.03 262 / 0);
   /* Pure light and dark for the multiply text mask: white shows the photo, black hides it. */
   --mask-light: oklch(1 0 0);
   --mask-dark: oklch(0 0 0);
@@ -131,7 +132,7 @@
   --card-foreground: var(--bone);
   --popover: var(--ink-raised);
   --popover-foreground: var(--bone);
-  --primary: var(--filament);
+  --primary: var(--spark);
   --primary-foreground: var(--ink);
   --secondary: var(--ink-raised);
   --secondary-foreground: var(--bone);
@@ -143,7 +144,7 @@
   --destructive-foreground: var(--bone);
   --border: var(--hairline);
   --input: var(--hairline-strong);
-  --ring: var(--filament);
+  --ring: var(--spark);
 }
 
 /* ---------- Base ---------- */
@@ -202,11 +203,11 @@
     -webkit-tap-highlight-color: transparent;
   }
   ::selection {
-    background: var(--filament);
+    background: var(--spark);
     color: var(--ink);
   }
   :focus-visible {
-    outline: 1px solid var(--filament);
+    outline: 1px solid var(--spark);
     outline-offset: 4px;
     border-radius: 2px;
   }
@@ -268,8 +269,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--filament);
-  box-shadow: 0 0 10px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 10px 1px var(--spark-glow);
 }
 .lead {
   font-size: var(--fs-lead);
@@ -284,11 +285,11 @@
   font-family: var(--font-display);
 }
 .glow-text {
-  color: var(--filament);
-  text-shadow: 0 0 28px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 28px var(--spark-glow);
 }
 .s-bone .glow-text {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
   text-shadow: none;
 }
 
@@ -324,7 +325,7 @@
 }
 
 .btn {
-  --btn-bg: var(--filament);
+  --btn-bg: var(--spark);
   --btn-fg: var(--ink);
   --btn-bd: transparent;
   position: relative;
@@ -375,16 +376,17 @@
 .btn:hover svg {
   transform: translate(2px, -2px);
 }
-.btn-filament {
-  --btn-bg: var(--filament);
+.btn-spark {
+  --btn-bg: var(--bone);
   --btn-fg: var(--ink);
-  box-shadow: 0 0 0 0 var(--filament-glow);
+  --btn-hover: var(--spark);
+  box-shadow: 0 0 0 0 var(--spark-glow);
   transition:
     box-shadow 0.6s var(--ease-out-quint),
     color 0.5s var(--ease-out-quint);
 }
-.btn-filament:hover {
-  box-shadow: 0 0 40px 2px var(--filament-glow);
+.btn-spark:hover {
+  box-shadow: 0 0 40px 2px var(--spark-glow);
 }
 .btn-ghost {
   --btn-bg: transparent;
@@ -396,7 +398,7 @@
 .btn-ink {
   --btn-bg: var(--ink);
   --btn-fg: var(--bone);
-  --btn-hover: var(--filament);
+  --btn-hover: var(--spark);
   --btn-hover-fg: var(--ink);
 }
 .btn-sm {
@@ -437,8 +439,8 @@
   transition: transform 0.6s var(--ease-out-quint);
 }
 .arrow-link:hover .arrow-circle {
-  background: var(--filament);
-  border-color: var(--filament);
+  background: var(--spark);
+  border-color: var(--spark);
   color: var(--ink);
 }
 .arrow-link:hover .arrow-circle svg {
@@ -490,7 +492,7 @@
   stroke-dashoffset: 0;
 }
 .schem-accent {
-  filter: drop-shadow(0 0 6px var(--filament-glow));
+  filter: drop-shadow(0 0 6px var(--spark-glow));
 }
 .s-bone .schem-accent {
   filter: none;
@@ -573,8 +575,8 @@
   display: block;
 }
 .pl-word em {
-  color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .pl-bar {
   position: absolute;
@@ -582,8 +584,8 @@
   right: var(--gutter);
   bottom: calc(var(--gutter) + 2.25rem);
   height: 1px;
-  background: var(--filament);
-  box-shadow: 0 0 12px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 12px 1px var(--spark-glow);
   transform-origin: left center;
   transform: scaleX(0);
 }
@@ -689,8 +691,8 @@
   height: 4px;
   margin-top: -2px;
   border-radius: 50%;
-  background: var(--filament);
-  box-shadow: 0 0 8px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 8px 1px var(--spark-glow);
 }
 .hdr-actions {
   display: flex;
@@ -811,7 +813,7 @@
 }
 .menu-nav a:hover .menu-label,
 .menu-nav a.is-active .menu-label {
-  color: var(--filament);
+  color: var(--spark);
   font-style: italic;
 }
 .menu-foot {
@@ -865,8 +867,8 @@
   letter-spacing: -0.02em;
 }
 .ftr-ask em {
-  color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .ftr-cols {
   display: grid;
@@ -894,8 +896,8 @@
   color: var(--bone);
 }
 .ftr-word em {
-  color: var(--filament);
-  text-shadow: 0 0 60px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 60px var(--spark-glow);
 }
 .ftr-legal {
   display: flex;
@@ -932,8 +934,8 @@
   line-height: 0.9;
 }
 .page-hero h1 em {
-  color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .page-hero-foot {
   display: grid;
@@ -962,7 +964,7 @@
   z-index: -1;
   background: radial-gradient(
     38rem 38rem at var(--mx, 50%) var(--my, 50%),
-    var(--filament-haze),
+    var(--spark-haze),
     var(--clear) 70%
   );
 }
@@ -976,8 +978,8 @@
   letter-spacing: -0.04em;
 }
 .cta-title em {
-  color: var(--filament);
-  text-shadow: 0 0 60px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 60px var(--spark-glow);
 }
 .cta-lede {
   max-width: 32rem;

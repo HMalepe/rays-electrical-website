@@ -16,7 +16,7 @@
   pointer-events: none;
   background: radial-gradient(
     42rem 42rem at var(--mx, 70%) var(--my, 30%),
-    var(--filament-haze),
+    var(--spark-haze),
     var(--clear) 70%
   );
 }
@@ -185,8 +185,8 @@
   line-height: 0.92;
 }
 .lights-copy h2 em {
-  color: var(--filament);
-  text-shadow: 0 0 50px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 50px var(--spark-glow);
 }
 .lights-copy .lead {
   grid-column: 9 / span 4;
@@ -226,8 +226,8 @@
 }
 .lights.is-on .lights-switch i::after {
   transform: translateX(1.15rem);
-  background: var(--filament);
-  box-shadow: 0 0 12px 2px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 12px 2px var(--spark-glow);
 }
 .lights-switch span {
   transition: color 0.4s;
@@ -260,8 +260,8 @@
   letter-spacing: -0.025em;
 }
 .approach-text em {
-  color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .approach-media {
   display: grid;
@@ -390,7 +390,7 @@
   font-size: var(--fs-h2);
 }
 .rail-card-end h3 em {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
 }
 .rail-card-end p {
   color: var(--muted);
@@ -438,8 +438,8 @@
   font-size: var(--fs-display);
 }
 .circuit-head h2 em {
-  color: var(--filament);
-  text-shadow: 0 0 50px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 50px var(--spark-glow);
 }
 .circuit-steps {
   position: relative;
@@ -455,8 +455,8 @@
 .circuit-wire i {
   position: absolute;
   inset: 0;
-  background: var(--filament);
-  box-shadow: 0 0 14px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 14px 1px var(--spark-glow);
   transform-origin: 50% 0;
   transform: scaleY(0);
 }
@@ -481,9 +481,9 @@
     text-shadow 0.8s;
 }
 .circuit-step.is-live .circuit-num {
-  color: var(--filament);
-  -webkit-text-stroke-color: var(--filament);
-  text-shadow: 0 0 50px var(--filament-glow);
+  color: var(--spark);
+  -webkit-text-stroke-color: var(--spark);
+  text-shadow: 0 0 50px var(--spark-glow);
 }
 .circuit-node {
   position: absolute;
@@ -501,11 +501,11 @@
     box-shadow 0.5s;
 }
 .circuit-step.is-live .circuit-node {
-  background: var(--filament);
-  border-color: var(--filament);
+  background: var(--spark);
+  border-color: var(--spark);
   box-shadow:
-    0 0 0 6px var(--filament-haze),
-    0 0 22px 3px var(--filament-glow);
+    0 0 0 6px var(--spark-haze),
+    0 0 22px 3px var(--spark-glow);
 }
 .circuit-copy {
   grid-column: 5 / span 7;
@@ -559,8 +559,8 @@
   width: 0.14em;
   height: 0.14em;
   border-radius: 50%;
-  background: var(--filament);
-  box-shadow: 0 0 20px 4px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 20px 4px var(--spark-glow);
   margin-left: 0.2em;
 }
 

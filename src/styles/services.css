@@ -38,7 +38,7 @@
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, var(--filament-haze), var(--clear));
+  background: radial-gradient(closest-side, var(--spark-haze), var(--clear));
 }
 html:not(.motion) .svc-hero-glow {
   opacity: 1;
@@ -75,11 +75,11 @@ html:not(.motion) .svc-hero-glow {
   transition: color 0.5s;
 }
 .svc-hero-index a:hover {
-  color: var(--filament);
+  color: var(--spark);
   font-style: italic;
 }
 .svc-hero-index a:hover .label {
-  color: var(--filament);
+  color: var(--spark);
 }
 
 /* ---------- Chapters (tone flips between paper and dark) ---------- */
@@ -89,7 +89,7 @@ html:not(.motion) .svc-hero-glow {
   --muted: var(--stone);
   --rule: var(--hairline-ink);
   --rule-strong: var(--hairline-ink-strong);
-  --svc-lit: var(--filament-deep);
+  --svc-lit: var(--spark-deep);
   --svc-glow: var(--clear);
   position: relative;
   padding-top: var(--section);
@@ -106,8 +106,8 @@ html:not(.motion) .svc-hero-glow {
   --muted: var(--smoke);
   --rule: var(--hairline);
   --rule-strong: var(--hairline-strong);
-  --svc-lit: var(--filament);
-  --svc-glow: var(--filament-glow);
+  --svc-lit: var(--spark);
+  --svc-glow: var(--spark-glow);
 }
 .svc-index .label,
 .svc-index .svc-ch-desc,
@@ -206,7 +206,7 @@ html:not(.motion) .svc-hero-glow {
   background: var(--svc-lit);
   border-color: var(--svc-lit);
   box-shadow:
-    0 0 0 5px var(--filament-haze),
+    0 0 0 5px var(--spark-haze),
     0 0 16px 2px var(--svc-glow);
 }
 .svc-toc a {
@@ -466,11 +466,11 @@ html:not(.motion) .svc-hero-glow {
 }
 .svc-fact.is-lit .svc-fact-lamp,
 html:not(.motion) .svc-fact-lamp {
-  background: var(--filament);
-  border-color: var(--filament-deep);
+  background: var(--spark);
+  border-color: var(--spark-deep);
   box-shadow:
-    0 0 0 6px var(--filament-haze),
-    0 0 22px 3px var(--filament-glow);
+    0 0 0 6px var(--spark-haze),
+    0 0 22px 3px var(--spark-glow);
 }
 .svc-fact-text {
   grid-column: 2 / -1;
@@ -496,7 +496,7 @@ html:not(.motion) .svc-fact-lamp {
   letter-spacing: -0.045em;
 }
 .svc-fact-closer em {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
 }
 .svc-between-foot {
   display: grid;

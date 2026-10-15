@@ -12,7 +12,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(34rem 34rem at 80% 50%, var(--filament-haze), var(--clear) 70%);
+  background: radial-gradient(34rem 34rem at 80% 50%, var(--spark-haze), var(--clear) 70%);
 }
 .about-hero-inner {
   position: relative;
@@ -209,7 +209,7 @@
   letter-spacing: -0.022em;
 }
 .about-scrub em {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
 }
 .about-story-foot {
   display: grid;
@@ -249,8 +249,8 @@
   font-size: var(--fs-h2);
 }
 .about-principles-head h2 em {
-  color: var(--filament);
-  text-shadow: 0 0 50px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 50px var(--spark-glow);
 }
 
 .about-stack {
@@ -313,8 +313,8 @@
   color: var(--ink);
 }
 .about-panel:nth-child(2) .about-panel-num {
-  color: var(--filament);
-  text-shadow: 0 0 80px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 80px var(--spark-glow);
   font-style: italic;
 }
 .about-panel:nth-child(3) .about-panel-num {
@@ -373,8 +373,8 @@
   margin: 0 0.06em;
   vertical-align: 0.22em;
   border-radius: 50%;
-  background: var(--filament);
-  box-shadow: 0 0 24px 4px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 24px 4px var(--spark-glow);
 }
 
 .about-map {
@@ -416,7 +416,7 @@
   z-index: -2;
   background: radial-gradient(
     18rem 18rem at var(--ax) var(--ay),
-    var(--filament-haze),
+    var(--spark-haze),
     var(--clear) 70%
   );
 }
@@ -426,7 +426,7 @@
   width: 100%;
   height: 100%;
   fill: none;
-  stroke: var(--filament);
+  stroke: var(--spark);
   stroke-width: 1;
   stroke-dasharray: 3 6;
   opacity: 0.75;
@@ -458,15 +458,15 @@
   height: 9px;
   margin: -4.5px 0 0 -4.5px;
   border-radius: 50%;
-  background: var(--filament);
-  box-shadow: 0 0 14px 2px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 14px 2px var(--spark-glow);
 }
 .about-fix-dot::after {
   content: "";
   position: absolute;
   inset: -1px;
   border-radius: 50%;
-  border: 1px solid var(--filament);
+  border: 1px solid var(--spark);
   animation: about-ping 2.8s var(--ease-out-quint) infinite;
 }
 @keyframes about-ping {
@@ -511,7 +511,7 @@
   height: 11px;
   margin-left: -5.5px;
   border-radius: 50%;
-  border: 1px solid var(--filament);
+  border: 1px solid var(--spark);
   background: var(--surface);
   flex-shrink: 0;
 }
@@ -610,7 +610,7 @@
     width: 112vw;
   }
   .about-hero::before {
-    background: radial-gradient(22rem 22rem at 80% 30%, var(--filament-haze), var(--clear) 70%);
+    background: radial-gradient(22rem 22rem at 80% 30%, var(--spark-haze), var(--clear) 70%);
   }
   .about-hero-meta-mid,
   .about-hero .page-hero-meta > :last-child {

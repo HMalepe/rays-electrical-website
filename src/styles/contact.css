@@ -12,7 +12,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(30rem 30rem at 86% 48%, var(--filament-haze), var(--clear) 70%);
+  background: radial-gradient(30rem 30rem at 86% 48%, var(--spark-haze), var(--clear) 70%);
 }
 .ct-hero-inner {
   position: relative;
@@ -51,7 +51,7 @@
   transition: color 0.4s;
 }
 .ct-jump a:hover {
-  color: var(--filament);
+  color: var(--spark);
 }
 .ct-jump svg {
   width: 0.85rem;
@@ -104,7 +104,7 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(60rem 14rem at 40% 100%, var(--filament-haze), var(--clear) 70%),
+    radial-gradient(60rem 14rem at 40% 100%, var(--spark-haze), var(--clear) 70%),
     var(--ink-raised);
   transform: scaleY(0);
   transform-origin: 50% 100%;
@@ -117,8 +117,8 @@
   right: 0;
   bottom: -1px;
   height: 1px;
-  background: var(--filament);
-  box-shadow: 0 0 14px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 14px 1px var(--spark-glow);
   transform: scaleX(0);
   transform-origin: 0 50%;
   transition: transform 0.9s var(--ease-out-quint);
@@ -176,7 +176,7 @@
   transition-duration: 0.85s;
 }
 .ct-row-value .roll-b {
-  color: var(--filament);
+  color: var(--spark);
   font-style: italic;
 }
 .ct-row:focus-visible .roll-a {
@@ -208,10 +208,10 @@
 }
 .ct-row:hover .ct-row-arrow,
 .ct-row:focus-visible .ct-row-arrow {
-  background: var(--filament);
-  border-color: var(--filament);
+  background: var(--spark);
+  border-color: var(--spark);
   color: var(--ink);
-  box-shadow: 0 0 40px 2px var(--filament-glow);
+  box-shadow: 0 0 40px 2px var(--spark-glow);
 }
 .ct-row:hover .ct-row-arrow svg,
 .ct-row:focus-visible .ct-row-arrow svg {
@@ -323,7 +323,7 @@
   line-height: 1.15;
   letter-spacing: -0.015em;
   outline: none;
-  background-image: linear-gradient(var(--filament-deep), var(--filament-deep));
+  background-image: linear-gradient(var(--spark-deep), var(--spark-deep));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0 2px;
@@ -356,7 +356,7 @@
   outline: none;
 }
 .ct-field:focus-within .ct-field-label > :first-child {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
 }
 .ct-field input:user-invalid,
 .ct-field textarea:user-invalid {
@@ -439,11 +439,11 @@
   color: var(--smoke);
 }
 .ct-chip:has(input:checked)::before {
-  background: var(--filament);
-  box-shadow: 0 0 10px 2px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 10px 2px var(--spark-glow);
 }
 .ct-chip:has(input:focus-visible) {
-  outline: 1px solid var(--filament-deep);
+  outline: 1px solid var(--spark-deep);
   outline-offset: 3px;
 }
 .ct-chips:has(input:user-invalid) .ct-chip {
@@ -458,7 +458,7 @@
   padding-top: 0.5rem;
 }
 .ct-submit .btn:focus-visible {
-  outline-color: var(--filament-deep);
+  outline-color: var(--spark-deep);
 }
 .ct-submit-note {
   max-width: 20rem;
@@ -479,8 +479,8 @@
   right: 0;
   top: 0;
   height: 1px;
-  background: var(--filament-deep);
-  box-shadow: 0 0 16px 1px var(--filament-glow);
+  background: var(--spark-deep);
+  box-shadow: 0 0 16px 1px var(--spark-glow);
   transform-origin: 0 50%;
   animation: ct-line 1.4s var(--ease-in-out-expo) both;
 }
@@ -513,7 +513,7 @@
   letter-spacing: -0.02em;
 }
 .ct-status-title em {
-  color: var(--filament-deep);
+  color: var(--spark-deep);
 }
 .ct-status-text {
   color: var(--muted);

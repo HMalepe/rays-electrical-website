@@ -43,12 +43,12 @@
 }
 .proc-wave-pulse {
   fill: none;
-  stroke: var(--filament);
+  stroke: var(--spark);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-dasharray: 0.07 0.93;
   stroke-dashoffset: 0;
-  filter: drop-shadow(0 0 6px var(--filament-glow));
+  filter: drop-shadow(0 0 6px var(--spark-glow));
   display: none;
 }
 .motion .proc-wave-pulse {
@@ -84,7 +84,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(64rem 40rem at 100% 88%, var(--filament-haze), var(--clear) 70%);
+  background: radial-gradient(64rem 40rem at 100% 88%, var(--spark-haze), var(--clear) 70%);
   opacity: 0;
   transition: opacity 1.6s var(--ease-out-quint);
 }
@@ -117,7 +117,7 @@
   color: var(--text);
 }
 .proc-count {
-  color: var(--filament);
+  color: var(--spark);
 }
 
 .proc-main {
@@ -157,8 +157,8 @@
 .proc-digits > span {
   display: block;
   height: 1.2em;
-  color: var(--filament);
-  text-shadow: 0 0 36px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 36px var(--spark-glow);
 }
 
 .proc-copies {
@@ -197,7 +197,7 @@
 }
 .proc-copy .label {
   margin-bottom: 1.75rem;
-  color: var(--filament);
+  color: var(--spark);
 }
 .proc-copy h2 {
   font-size: var(--fs-h2);
@@ -233,8 +233,8 @@
   top: 0;
   height: 100%;
   width: 0;
-  background: var(--filament);
-  box-shadow: 0 0 12px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 12px 1px var(--spark-glow);
 }
 .proc-current::after {
   content: "";
@@ -246,8 +246,8 @@
   border-radius: 50%;
   background: var(--bone);
   box-shadow:
-    0 0 0 3px var(--filament-glow),
-    0 0 26px 7px var(--filament-glow);
+    0 0 0 3px var(--spark-glow),
+    0 0 26px 7px var(--spark-glow);
 }
 .proc-node {
   grid-column: span 3;
@@ -272,11 +272,11 @@
     box-shadow 0.8s var(--ease-out-quint);
 }
 .proc-node.is-live .proc-node-dot {
-  background: var(--filament);
-  border-color: var(--filament);
+  background: var(--spark);
+  border-color: var(--spark);
   box-shadow:
-    0 0 0 6px var(--filament-haze),
-    0 0 22px 3px var(--filament-glow);
+    0 0 0 6px var(--spark-haze),
+    0 0 22px 3px var(--spark-glow);
 }
 .proc-node-title {
   font-family: var(--font-display);
@@ -292,7 +292,7 @@
   color: var(--text);
 }
 .proc-node.is-live .label {
-  color: var(--filament);
+  color: var(--spark);
 }
 /* The wire ends in a lamp hanging from its last terminal. */
 .proc-lamp {
@@ -323,7 +323,7 @@
   height: 12rem;
   margin: -6rem 0 0 -6rem;
   border-radius: 50%;
-  background: radial-gradient(closest-side, var(--filament-glow), var(--clear));
+  background: radial-gradient(closest-side, var(--spark-glow), var(--clear));
   opacity: 0;
   transition: opacity 1.2s var(--ease-out-quint);
 }
@@ -332,7 +332,7 @@
 }
 .proc-stage.is-on .proc-lamp svg {
   opacity: 1;
-  filter: drop-shadow(0 0 10px var(--filament-glow));
+  filter: drop-shadow(0 0 10px var(--spark-glow));
 }
 .proc-stage.is-on .proc-lamp::before {
   opacity: 1;
@@ -357,8 +357,8 @@
   font-size: var(--fs-h2);
 }
 .proc-stack-head h2 em {
-  color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .proc-list {
   list-style: none;
@@ -379,8 +379,8 @@
 .proc-item-line i {
   position: absolute;
   inset: 0;
-  background: var(--filament);
-  box-shadow: 0 0 12px 1px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 12px 1px var(--spark-glow);
   transform-origin: 0 50%;
 }
 .motion .proc-item-line i {
@@ -402,11 +402,11 @@
 }
 .proc-item.is-live .proc-item-line span,
 html:not(.motion) .proc-item-line span {
-  background: var(--filament);
-  border-color: var(--filament);
+  background: var(--spark);
+  border-color: var(--spark);
   box-shadow:
-    0 0 0 6px var(--filament-haze),
-    0 0 22px 3px var(--filament-glow);
+    0 0 0 6px var(--spark-haze),
+    0 0 22px 3px var(--spark-glow);
 }
 .proc-item-num {
   grid-column: 1 / span 4;
@@ -423,9 +423,9 @@ html:not(.motion) .proc-item-line span {
 }
 .proc-item.is-live .proc-item-num,
 html:not(.motion) .proc-item-num {
-  color: var(--filament);
-  -webkit-text-stroke-color: var(--filament);
-  text-shadow: 0 0 40px var(--filament-glow);
+  color: var(--spark);
+  -webkit-text-stroke-color: var(--spark);
+  text-shadow: 0 0 40px var(--spark-glow);
 }
 .proc-item-copy {
   grid-column: 6 / -1;
@@ -539,8 +539,8 @@ html:not(.motion) .proc-item-num {
   height: 0.85em;
   margin-left: 0.12em;
   vertical-align: -0.06em;
-  background: var(--filament);
-  box-shadow: 0 0 10px var(--filament-glow);
+  background: var(--spark);
+  box-shadow: 0 0 10px var(--spark-glow);
   animation: proc-blink 1.1s steps(1) infinite;
 }
 @keyframes proc-blink {
