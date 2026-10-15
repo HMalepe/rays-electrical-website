@@ -115,7 +115,7 @@
 
   /* Space */
   --gutter: clamp(1.25rem, 3.2vw, 3rem);
-  --section: clamp(6rem, 13vw, 13rem);
+  --section: clamp(4rem, 7.5vw, 7.5rem);
   --max: 1680px;
   --header-h: 76px;
 
@@ -840,7 +840,7 @@
   position: relative;
   height: var(--ftr-h);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  --ftr-h: max(100svh, 720px);
+  --ftr-h: max(80svh, 640px);
 }
 .ftr-inner {
   position: fixed;

@@ -205,7 +205,7 @@ function Run() {
           scrollTrigger: {
             trigger: stage,
             start: "top top",
-            end: () => `+=${window.innerHeight * 3.4}`,
+            end: () => `+=${window.innerHeight * 2.4}`,
             pin: true,
             scrub: 0.9,
             anticipatePin: 1,

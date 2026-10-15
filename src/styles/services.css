@@ -572,22 +572,22 @@ html:not(.motion) .svc-fact-lamp {
   }
 
   .svc-ch {
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
   .svc-ch-head,
   .svc-ch-grid {
     grid-template-columns: 1fr;
   }
   .svc-ch-head {
-    row-gap: 1.75rem;
-    margin-bottom: 2.25rem;
+    row-gap: 1rem;
+    margin-bottom: 1.5rem;
   }
   .svc-ch-num,
   .svc-ch-titles {
     grid-column: 1;
   }
   .svc-ch-num {
-    font-size: 7.5rem;
+    font-size: 5.5rem;
   }
   .svc-ch-titles {
     padding-left: 0;
@@ -599,7 +599,10 @@ html:not(.motion) .svc-fact-lamp {
     font-size: clamp(2.6rem, 12vw, 3.6rem);
   }
   .svc-ch-grid {
-    row-gap: 2.5rem;
+    row-gap: 1.75rem;
+  }
+  .svc-ch-panel {
+    aspect-ratio: 1;
   }
   .svc-ch-panel,
   .svc-ch-body,

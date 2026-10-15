@@ -183,7 +183,7 @@ function LightsOn() {
         scrollTrigger: {
           trigger: el,
           start: "top top",
-          end: "+=230%",
+          end: "+=115%",
           scrub: 1,
           pin: ".lights-stage",
           anticipatePin: 1,

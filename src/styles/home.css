@@ -322,7 +322,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--gutter);
-  margin-top: clamp(5rem, 11vw, 11rem);
+  margin-top: clamp(3rem, 6vw, 6rem);
   align-items: start;
 }
 .approach-a {
@@ -330,7 +330,7 @@
 }
 .approach-b {
   grid-column: 8 / span 5;
-  margin-top: clamp(6rem, 16vw, 16rem);
+  margin-top: clamp(3.5rem, 8vw, 8rem);
 }
 .approach figcaption {
   margin-top: 0.85rem;
@@ -354,7 +354,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--gutter);
   align-items: end;
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 .rail-head .label {
   grid-column: 1 / -1;
@@ -393,7 +393,7 @@
 }
 .rail-card {
   position: relative;
-  width: clamp(340px, 33vw, 560px);
+  width: clamp(320px, 29vw, 500px);
   height: min(74svh, 760px);
   display: flex;
   flex-direction: column;
@@ -482,7 +482,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--gutter);
-  margin-bottom: clamp(4rem, 9vw, 9rem);
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
 }
 .circuit-head .label {
   grid-column: 1 / span 3;
@@ -520,7 +520,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--gutter);
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(1.75rem, 3.2vw, 3rem);
 }
 .circuit-num {
   grid-column: 1 / span 3;
@@ -542,7 +542,7 @@
 }
 .circuit-node {
   position: absolute;
-  top: calc(clamp(2.5rem, 5vw, 4.5rem) + 0.4rem);
+  top: calc(clamp(1.75rem, 3.2vw, 3rem) + 0.4rem);
   left: 33.333%;
   width: 11px;
   height: 11px;
@@ -671,7 +671,9 @@
   max-width: 30rem;
 }
 .ethos-pool {
-  margin-top: clamp(5rem, 10vw, 10rem);
+  margin-top: clamp(3rem, 5vw, 5rem);
+  max-width: 52rem;
+  margin-left: auto;
 }
 .ethos-pool figcaption {
   display: flex;
@@ -693,39 +695,54 @@
 }
 
 @media (max-width: 899px) {
+  /* Services become a swipeable row instead of four stacked screens. */
   .rail-pin {
     height: auto;
     overflow: visible;
     display: block;
   }
   .rail-track {
-    flex-direction: column;
     width: auto;
-    padding-left: 0;
-    margin-inline: var(--gutter);
-    border-bottom: 0;
+    padding-inline: var(--gutter);
+    gap: 0.75rem;
+    border: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .rail-track::-webkit-scrollbar {
+    display: none;
   }
   .rail-card,
   .rail-card:first-child {
+    flex: 0 0 min(80vw, 22rem);
     width: auto;
     height: auto;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--rule);
-    padding: 1.5rem 0 2.5rem;
+    scroll-snap-align: start;
+    border: 1px solid var(--rule);
+    border-radius: 1rem;
+    padding: 1.25rem 1.25rem 1.5rem;
   }
   .rail-art {
-    padding-block: 2rem;
+    padding-block: 0.75rem;
   }
   .rail-art svg {
-    max-height: 46svh;
+    height: auto;
+    width: 100%;
+    max-height: 30svh;
   }
   .rail-card-end {
-    margin-right: 0;
-    padding: 2.5rem 1.5rem;
-    margin-top: 2rem;
+    margin: 0;
+    margin-right: var(--gutter);
+    justify-content: flex-end;
+    padding: 1.25rem 1.25rem 1.5rem;
     border-radius: 1rem;
-    border-bottom: 0;
+  }
+  .rail-card-end h3 {
+    font-size: var(--fs-h3);
   }
   .rail-progress {
     display: none;
