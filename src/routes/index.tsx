@@ -16,11 +16,10 @@ import {
 import { ClosingCta } from "@/components/site/SiteShell";
 import { ServiceArt } from "@/components/site/ServiceArt";
 import { HeroVideo } from "@/components/site/HeroVideo";
-import { pageHead, principles, services, site, steps } from "@/data/site";
+import { pageHead, services, site, steps } from "@/data/site";
 import hero from "@/assets/ray-home.jpg";
 import path from "@/assets/detail-path.jpg";
 import living from "@/assets/detail-living.jpg";
-import pool from "@/assets/detail-pool.jpg";
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -49,7 +48,6 @@ function Index() {
           ),
         )}
       </Marquee>
-      <Ethos />
       <ClosingCta />
     </main>
   );
@@ -308,6 +306,12 @@ function Approach() {
           Light is the part of electrical work you actually see. The rest, the board, the breakers,
           the cable behind the wall, is what makes it safe. Ray takes care of both.
         </p>
+        <Link to="/about" className="arrow-link approach-more">
+          Meet Ray
+          <span className="arrow-circle">
+            <ArrowUpRight />
+          </span>
+        </Link>
       </div>
     </section>
   );
@@ -522,60 +526,6 @@ function Circuit() {
             <ArrowUpRight />
           </span>
         </Link>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-function Ethos() {
-  return (
-    <section className="ethos s-bone">
-      <div className="wrap ethos-grid">
-        <div className="ethos-intro">
-          <span className="label">The person behind the power</span>
-          <Reveal as="h2">
-            Not just an electrician.
-            <br />
-            <em>Your go-to guy.</em>
-          </Reveal>
-          <p>
-            When you invite someone into your home or business, trust matters. Ray takes the time to
-            understand what you need, explain the work and agree the plan before getting started.
-          </p>
-          <Link to="/about" className="arrow-link">
-            Meet Ray
-            <span className="arrow-circle">
-              <ArrowUpRight />
-            </span>
-          </Link>
-        </div>
-        <ol className="ethos-list">
-          {principles.map((item, i) => (
-            <li key={item.title}>
-              <span className="label">0{i + 1}</span>
-              <div>
-                <Reveal as="h3">{item.title}</Reveal>
-                <p>{item.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <div className="wrap">
-        <figure className="ethos-pool">
-          <RevealImage
-            src={pool}
-            alt="A pool reflecting the warm lights of the house behind it"
-            width={740}
-            height={310}
-            parallax={10}
-          />
-          <figcaption className="label">
-            <span>Underwater — pool</span>
-            <span>Fourways · Sandton</span>
-          </figcaption>
-        </figure>
       </div>
     </section>
   );

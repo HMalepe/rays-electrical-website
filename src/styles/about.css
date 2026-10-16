@@ -710,3 +710,53 @@
     gap: 0.35rem;
   }
 }
+
+/* ---------- Go-to guy ---------- */
+.about-go {
+  padding-top: var(--section);
+  padding-bottom: var(--section);
+}
+.about-go-head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 1.5rem;
+}
+.about-go-head .label {
+  grid-column: 1 / span 3;
+  padding-top: 1.2em;
+}
+.about-go-head h2 {
+  grid-column: 4 / -1;
+  font-size: var(--fs-display);
+  line-height: 0.9;
+}
+.about-go-head h2 em {
+  color: var(--stone);
+}
+/* Capped near the photo's native size so it stays sharp. */
+.about-go-photo {
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  margin-left: auto;
+  max-width: 52rem;
+}
+.about-go-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.85rem;
+}
+@media (max-width: 760px) {
+  .about-go-head {
+    grid-template-columns: 1fr;
+  }
+  .about-go-head .label,
+  .about-go-head h2 {
+    grid-column: 1;
+  }
+  .about-go-head h2 {
+    font-size: clamp(3rem, 15vw, 5.5rem);
+  }
+  .about-go-photo figcaption > :last-child {
+    display: none;
+  }
+}

@@ -335,6 +335,11 @@
 .approach figcaption {
   margin-top: 0.85rem;
 }
+.approach-more {
+  grid-column: 8 / span 4;
+  margin-top: 1.75rem;
+  justify-self: start;
+}
 .approach-note {
   grid-column: 8 / span 4;
   margin-top: clamp(2.5rem, 5vw, 4.5rem);
@@ -619,68 +624,6 @@
   margin-left: 0.2em;
 }
 
-/* ---------- Ethos ---------- */
-.ethos {
-  padding-top: var(--section);
-  padding-bottom: clamp(3rem, 6vw, 6rem);
-}
-.ethos-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--gutter);
-  row-gap: 4rem;
-}
-.ethos-intro {
-  grid-column: 1 / span 5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.75rem;
-}
-.ethos-intro h2 {
-  font-size: var(--fs-h2);
-}
-.ethos-intro h2 em {
-  color: var(--stone);
-}
-.ethos-intro p {
-  color: var(--muted);
-  max-width: 28rem;
-}
-.ethos-list {
-  grid-column: 7 / -1;
-  list-style: none;
-  border-top: 1px solid var(--rule);
-  align-self: end;
-}
-.ethos-list li {
-  display: grid;
-  grid-template-columns: 4rem 1fr;
-  padding-block: 2rem;
-  border-bottom: 1px solid var(--rule);
-}
-.ethos-list .label {
-  padding-top: 0.9em;
-}
-.ethos-list h3 {
-  font-size: var(--fs-h3);
-}
-.ethos-list p {
-  margin-top: 0.75rem;
-  color: var(--muted);
-  max-width: 30rem;
-}
-.ethos-pool {
-  margin-top: clamp(3rem, 5vw, 5rem);
-  max-width: 52rem;
-  margin-left: auto;
-}
-.ethos-pool figcaption {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.85rem;
-}
-
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .hero-foot .lead {
@@ -819,6 +762,7 @@
   }
   .approach-a,
   .approach-b,
+  .approach-more,
   .approach-note {
     grid-column: 1;
     margin-top: 0;
@@ -861,20 +805,6 @@
   }
   .circuit-foot {
     justify-content: flex-start;
-  }
-
-  .ethos-grid {
-    grid-template-columns: 1fr;
-  }
-  .ethos-intro,
-  .ethos-list {
-    grid-column: 1;
-  }
-  .ethos-list li {
-    grid-template-columns: 2.75rem 1fr;
-  }
-  .ethos-pool figcaption > :last-child {
-    display: none;
   }
 }
 

@@ -2,10 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, type CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { ease, gsap, motionEnabled, onIntro, useGSAP } from "@/lib/motion";
-import { Draw, Reveal, ScrubText } from "@/components/motion/Motion";
+import { Draw, Reveal, RevealImage, ScrubText } from "@/components/motion/Motion";
 import { ClosingCta } from "@/components/site/SiteShell";
 import { SchematicMark } from "@/components/site/Schematics";
 import { facts, pageHead, principles, site } from "@/data/site";
+import pool from "@/assets/detail-pool.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () =>
@@ -22,6 +23,7 @@ function AboutPage() {
       <Hero />
       <Story />
       <Principles />
+      <GoToGuy />
       <Area />
       <ClosingCta
         title={
@@ -298,6 +300,38 @@ function Principles() {
           </li>
         ))}
       </ol>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* The line Ray stands for, over the one photograph that shows what the work is for. */
+function GoToGuy() {
+  return (
+    <section className="about-go s-bone">
+      <div className="wrap about-go-head">
+        <span className="label">The person behind the power</span>
+        <Reveal as="h2">
+          Not just an electrician.
+          <br />
+          <em>Your go-to guy.</em>
+        </Reveal>
+      </div>
+      <div className="wrap">
+        <figure className="about-go-photo">
+          <RevealImage
+            src={pool}
+            alt="A pool reflecting the warm lights of the house behind it"
+            width={740}
+            height={310}
+            parallax={10}
+          />
+          <figcaption className="label">
+            <span>Underwater — pool</span>
+            <span>Fourways · Sandton</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   );
 }
