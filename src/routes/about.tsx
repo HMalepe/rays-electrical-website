@@ -317,6 +317,23 @@ function GoToGuy() {
           <em>Your go-to guy.</em>
         </Reveal>
       </div>
+      <div className="wrap about-go-body">
+        <p>
+          When you invite someone into your home or business, trust matters. Ray takes the time to
+          understand what you need, explain the work and agree the plan before getting started.
+        </p>
+        <ol className="about-go-list">
+          {principles.map((item, i) => (
+            <li key={item.title}>
+              <span className="label">0{i + 1}</span>
+              <div>
+                <Reveal as="h3">{item.title}</Reveal>
+                <p>{item.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
       <div className="wrap">
         <figure className="about-go-photo">
           <RevealImage

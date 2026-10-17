@@ -734,6 +734,40 @@
 .about-go-head h2 em {
   color: var(--stone);
 }
+.about-go-body {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 2.5rem;
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.about-go-body > p {
+  grid-column: 4 / span 4;
+  color: var(--muted);
+}
+.about-go-list {
+  grid-column: 8 / -1;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+}
+.about-go-list li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.about-go-list .label {
+  padding-top: 0.9em;
+}
+.about-go-list h3 {
+  font-size: var(--fs-h3);
+}
+.about-go-list li p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  max-width: 30rem;
+}
 /* Capped near the photo's native size so it stays sharp. */
 .about-go-photo {
   margin-top: clamp(2.5rem, 5vw, 4.5rem);
@@ -755,6 +789,16 @@
   }
   .about-go-head h2 {
     font-size: clamp(3rem, 15vw, 5.5rem);
+  }
+  .about-go-body {
+    grid-template-columns: 1fr;
+  }
+  .about-go-body > p,
+  .about-go-list {
+    grid-column: 1;
+  }
+  .about-go-list li {
+    grid-template-columns: 2.75rem 1fr;
   }
   .about-go-photo figcaption > :last-child {
     display: none;
